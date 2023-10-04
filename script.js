@@ -12,7 +12,7 @@ let error = document.getElementById("error")
 let elocation;
 
 function checkWeather() {
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${elocation}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${elocation}`)
         .then(response => response.json())
         .then(data => {
             currentWeather = data.current;
