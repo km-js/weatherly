@@ -11,6 +11,11 @@ let error = document.getElementById("error")
 
 let elocation;
 
+searchInput.addEventListener("change", function(event) {
+    //console.log(event.target.value)
+    elocation = event.target.value;
+})
+
 function checkWeather() {
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${elocation}`)
         .then(response => response.json())
@@ -39,10 +44,7 @@ function checkWeather() {
         })
 }
 
-searchInput.addEventListener("change", function(event) {
-    //console.log(event.target.value)
-    elocation = event.target.value;
-})
+
 
 searchInput.addEventListener("keyup", function() {
     checkWeather();
